@@ -1,0 +1,43 @@
+{
+  "presets": [
+    "stage-0",
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "plugins": [
+            [
+              "styled-jsx-plugin-sass",
+              {
+                "sassOptions": {
+                  "includePaths": ["./styles"],
+                  "precision": 2
+                }
+              }
+            ]
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"]
+    }]
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-intl"]
+    },
+    "production": {
+      "plugins": [
+        [
+          "react-intl",
+          {
+            "messagesDir": "lang/.messages/"
+          }
+        ]
+      ]
+    }
+  }
+}
